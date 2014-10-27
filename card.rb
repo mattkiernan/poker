@@ -1,12 +1,15 @@
 class Card
 
-  def initialize(number_and_suit)
-    @number = number_and_suit[:number]
-    @suit = number_and_suit[:suit]
+  def initialize(number, suit)
+    @number = number
+    @suit = suit
   end
 
   def to_s
     "#{@number} #{@suit}"
   end
+
+  attr_reader :number
+  attr_reader :suit
 
 end

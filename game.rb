@@ -1,4 +1,5 @@
 require "./deck"
+require "./analyze"
 
 class Game
   def initialize
@@ -21,7 +22,10 @@ class Game
 
   def play
     deal
+    Analyzer.new(@hand)
   end
+
+
 end
 
 
