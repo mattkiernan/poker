@@ -4,9 +4,26 @@ class Game
   def initialize
     deck = Deck.new
     deck.build
-    puts deck.cards
+    shuffle(deck.cards)
   end
 
+  def shuffle(deck)
+    @shuffled_deck = deck.shuffle
+  end
+
+  def deal
+    @hand = []
+    5.times do 
+      @hand << @shuffled_deck.pop
+    end
+    puts @hand
+  end
+
+  def play
+    deal
+  end
 end
 
-Game.new
+
+game = Game.new
+game.play
